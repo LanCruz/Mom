@@ -1,0 +1,243 @@
+/* GENERAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  color: #333;
+  text-align: center;
+}
+
+/* HEADERS */
+h1 {
+  font-size: 2.5em;
+  color: #e75480;
+  text-shadow: 0 0 10px #ffc0cb;
+  margin-top: 40px;
+}
+
+/* COMFORT MESSAGE BOX */
+.comfort-message {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(231, 84, 128, 0.2);
+  animation: fadeIn 1s ease;
+}
+
+/* BUTTONS */
+.button-container, .back-button-container {
+  margin: 30px;
+}
+
+.next-page-button,
+.back-button {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: white;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px #ff69b4;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.next-page-button:hover,
+.back-button:hover {
+  transform: scale(1.05);
+  background-color: #ff4fa3;
+}
+
+/* PHOTO GALLERY */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.photo-card {
+  position: relative;
+  width: 200px;
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.photo-card:hover {
+  transform: scale(1.03);
+}
+
+/* NEON CORNERS */
+.photo-card::before,
+.photo-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ff69b4;
+  border-radius: 3px;
+  box-shadow: 0 0 8px #ff69b4;
+}
+
+.photo-card::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.photo-card::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e75480;
+}
+
+/* LETTER PAGE */
+.letter-container {
+  background: rgba(255, 255, 255, 0.9);
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.letter-content p {
+  font-size: 1.2em;
+  color: #444;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* HEARTS BACKGROUND (optional) */
+.hearts-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hearts-background::before,
+.hearts-background::after {
+  content: "🩶💙💚💛❤️🩵";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1.8rem;
+  opacity: 0.2;
+  animation: floatHearts 18s linear infinite;
+  white-space: nowrap;
+}
+
+.hearts-background::after {
+  animation-delay: 8s;
+}
+
+/* ANIMATIONS */
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-50px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .comfort-message {
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  .photo-card {
+    width: 90%;
+  }
+
+  .letter-content p {
+    font-size: 1em;
+  }
+
+  .next-page-button,
+  .back-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .nav-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 45%;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .nav-button.back {
+    background-color: #e74c3c; /* red */
+    box-shadow: 0 0 10px #e74c3c;
+  }
+  
+  .nav-button.next {
+    background-color: #27ae60; /* green */
+    box-shadow: 0 0 10px #27ae60;
+  }
+  
+}
